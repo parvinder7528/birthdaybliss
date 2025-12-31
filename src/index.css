@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap'); */
+
+@layer base {
+  :root {
+    /* Luxurious Australian Spa Palette */
+    --background: 40 30% 97%;
+    --foreground: 30 15% 15%;
+
+    --card: 40 25% 95%;
+    --card-foreground: 30 15% 15%;
+
+    --popover: 40 30% 97%;
+    --popover-foreground: 30 15% 15%;
+
+    /* Eucalyptus Sage Green */
+    --primary: 150 25% 35%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Warm Cream */
+    --secondary: 35 35% 92%;
+    --secondary-foreground: 30 15% 20%;
+
+    /* Soft Rose Gold */
+    --accent: 15 45% 65%;
+    --accent-foreground: 40 30% 97%;
+
+    --muted: 35 20% 90%;
+    --muted-foreground: 30 10% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 25% 85%;
+    --input: 35 25% 85%;
+    --ring: 150 25% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --gold: 38 65% 55%;
+    --gold-light: 38 55% 75%;
+    --terracotta: 15 55% 55%;
+    --sage-light: 150 20% 90%;
+    --cream-dark: 35 25% 88%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(40 30% 97%) 0%, hsl(35 35% 92%) 50%, hsl(150 20% 90%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(15 45% 65%) 0%, hsl(38 65% 55%) 100%);
+    --gradient-sage: linear-gradient(180deg, hsl(150 25% 35%) 0%, hsl(150 30% 28%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(30 15% 15% / 0.1) 0%, hsla(30 15% 15% / 0.6) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsla(30 15% 15% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsla(30 15% 15% / 0.12);
+    --shadow-glow: 0 0 40px hsla(150 25% 35% / 0.15);
+    --shadow-accent: 0 8px 25px -5px hsla(15 45% 65% / 0.35);
+
+    /* Sidebar */
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 30 15% 25%;
+    --sidebar-primary: 150 25% 35%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 35 35% 92%;
+    --sidebar-accent-foreground: 30 15% 20%;
+    --sidebar-border: 35 25% 85%;
+    --sidebar-ring: 150 25% 35%;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 40 25% 95%;
+
+    --card: 30 15% 12%;
+    --card-foreground: 40 25% 95%;
+
+    --popover: 30 15% 10%;
+    --popover-foreground: 40 25% 95%;
+
+    --primary: 150 30% 50%;
+    --primary-foreground: 30 15% 10%;
+
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 25% 95%;
+
+    --accent: 15 50% 60%;
+    --accent-foreground: 30 15% 10%;
+
+    --muted: 30 15% 20%;
+    --muted-foreground: 35 15% 60%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 20%;
+    --ring: 150 30% 50%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 150 30% 50%;
+    --sidebar-primary-foreground: 30 15% 10%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 30 15% 20%;
+    --sidebar-ring: 150 30% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .bg-accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .bg-sage-gradient {
+    background: var(--gradient-sage);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes float-up {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+.animate-float-up {
+  animation-name: float-up;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
