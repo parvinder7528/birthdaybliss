@@ -101,7 +101,7 @@ const Categories = () => {
         <div className="flex gap-2 mt-4">
           <a
             className="flex-1 px-4 py-2.5 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-all font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
-            href="/categories-view"
+            href="/cart-detail"
             data-discover="true"
           >
             <i className="ri-shopping-cart-line" />
@@ -176,7 +176,7 @@ const Categories = () => {
         <div className="flex gap-2 mt-4">
           <a
             className="flex-1 px-4 py-2.5 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-all font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
-            href="/categories-view"
+            href="/cart-detail"
             data-discover="true"
           >
             <i className="ri-shopping-cart-line" />
@@ -255,7 +255,7 @@ const Categories = () => {
         <div className="flex gap-2 mt-4">
           <a
             className="flex-1 px-4 py-2.5 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-all font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
-            href="//categories-view/3"
+            href="/cart-detail"
             data-discover="true"
           >
             <i className="ri-shopping-cart-line" />
@@ -330,7 +330,7 @@ const Categories = () => {
         <div className="flex gap-2 mt-4">
           <a
             className="flex-1 px-4 py-2.5 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-all font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
-            href="/categories-view"
+            href="/cart-detail"
             data-discover="true"
           >
             <i className="ri-shopping-cart-line" />
@@ -405,7 +405,7 @@ const Categories = () => {
         <div className="flex gap-2 mt-4">
           <a
             className="flex-1 px-4 py-2.5 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-all font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
-            href="/categories-view"
+            href="/cart-detail"
             data-discover="true"
           >
             <i className="ri-shopping-cart-line" />
@@ -480,7 +480,7 @@ const Categories = () => {
         <div className="flex gap-2 mt-4">
           <a
             className="flex-1 px-4 py-2.5 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-all font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
-            href="/categories-view"
+            href="/cart-detail"
             data-discover="true"
           >
             <i className="ri-shopping-cart-line" />
@@ -488,7 +488,7 @@ const Categories = () => {
           </a>
           <a
             className="px-4 py-2.5 border-2 border-pink-500 text-pink-500 rounded-lg hover:bg-pink-50 transition-all font-semibold text-sm whitespace-nowrap cursor-pointer"
-            href="/categories-view"
+            href="/cart-detail"
             data-discover="true"
           >
             View

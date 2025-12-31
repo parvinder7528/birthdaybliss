@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -28,7 +29,6 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-
             {/* Logo */}
             <a className="flex items-center space-x-3 cursor-pointer" href="/">
               <img
@@ -77,6 +77,11 @@ const Navbar = () => {
               {["heart", "shopping-cart"].map((icon) => (
                 <button
                   key={icon}
+                  onClick={() => {
+                    if (icon === "shopping-cart") {
+                      navigate("/cart-detail");
+                    }
+                  }}
                   className="relative p-2 hover:bg-pink-50 rounded-full transition-colors"
                 >
                   <i
@@ -103,7 +108,6 @@ const Navbar = () => {
                 }`}
               />
             </button>
-
           </div>
         </div>
       </nav>
@@ -147,9 +151,7 @@ const Navbar = () => {
             </form>
 
             <div className="mt-4">
-              <p className="text-sm text-gray-500 mb-2">
-                Popular Searches:
-              </p>
+              <p className="text-sm text-gray-500 mb-2">Popular Searches:</p>
               <div className="flex flex-wrap gap-2">
                 {[
                   "Birthday Balloons",

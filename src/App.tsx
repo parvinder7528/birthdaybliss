@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Categories from "./components/category/Categories";
 import Categoryview from "./components/category/Categoryview";
+import Cart from "./components/cart/Cart";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories-view" element={<Categoryview />} />
+          <Route path="/cart-detail" element={<Cart />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
