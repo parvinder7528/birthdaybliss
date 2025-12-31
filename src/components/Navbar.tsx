@@ -93,7 +93,7 @@ const Navbar = () => {
               ))}
 
               <a
-                href="/login"
+                href="/sign-in"
                 className="px-5 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors text-sm font-medium"
               >
                 Sign In
