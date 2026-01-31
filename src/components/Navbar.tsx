@@ -12,19 +12,21 @@ const Navbar = () => {
   // Detect decoration route
   const isDecorationRoute = location.pathname === "/decoration";
 
-  // Menu logic
+  // Menu items
   const menuItems = isDecorationRoute
     ? [
         { name: "Home", path: "/" },
         { name: "Decoration", path: "/decoration" },
+        { name: "Disposal", path: "/disposal" },
       ]
     : [
         { name: "Home", path: "/" },
         { name: "Categories", path: "/categories" },
         { name: "Decoration", path: "/decoration" },
+        { name: "Disposal", path: "/disposal" },
       ];
 
-  // Navbar scroll effect
+  // Scroll effect
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -33,16 +35,16 @@ const Navbar = () => {
 
   // Lock body scroll
   useEffect(() => {
-    document.body.style.overflow =
-      openSearch || openMobileMenu ? "hidden" : "auto";
-  }, [openSearch, openMobileMenu]);
+    document.body.style.overflow = openMobileMenu ? "hidden" : "auto";
+  }, [openMobileMenu]);
 
   return (
     <>
       {/* NAVBAR */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-white shadow-md" : "bg-transparent"
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
@@ -71,20 +73,18 @@ const Navbar = () => {
                 <button
                   key={item.name}
                   onClick={() => navigate(item.path)}
-                  className={`text-sm font-medium hover:text-pink-500
-                  ${scrolled ? "text-gray-700" : "text-white"}`}
+                  className={`text-sm font-medium hover:text-pink-500 ${
+                    scrolled ? "text-gray-700" : "text-white"
+                  }`}
                 >
                   {item.name}
                 </button>
               ))}
             </div>
 
-            {/* RIGHT ICONS */}
+            {/* DESKTOP RIGHT ICONS */}
             <div className="hidden md:flex items-center space-x-4">
-              <button
-                onClick={() => setOpenSearch(true)}
-                className="p-2 rounded-full hover:bg-pink-50"
-              >
+              <button className="p-2 rounded-full hover:bg-pink-50">
                 <i
                   className={`ri-search-line text-xl ${
                     scrolled ? "text-gray-700" : "text-white"
@@ -136,6 +136,7 @@ const Navbar = () => {
             className="absolute right-0 top-0 h-full w-[80%] bg-white p-6"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* HEADER */}
             <div className="flex justify-between mb-6">
               <h2 className="text-xl font-bold">Birthday Bliss</h2>
               <button onClick={() => setOpenMobileMenu(false)}>
@@ -158,6 +159,43 @@ const Navbar = () => {
                 </button>
               ))}
             </nav>
+
+            {/* DIVIDER */}
+            <hr className="my-6" />
+
+            {/* MOBILE ACTIONS */}
+            <div className="flex flex-col space-y-4">
+              <button
+                className="flex items-center space-x-3 text-lg"
+                onClick={() => {
+                  setOpenMobileMenu(false);
+                }}
+              >
+                <i className="ri-search-line text-xl" />
+                <span>Search</span>
+              </button>
+
+              <button
+                className="flex items-center space-x-3 text-lg"
+                onClick={() => {
+                  navigate("/cart-detail");
+                  setOpenMobileMenu(false);
+                }}
+              >
+                <i className="ri-shopping-cart-line text-xl" />
+                <span>Cart</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  navigate("/sign-in");
+                  setOpenMobileMenu(false);
+                }}
+                className="mt-2 px-5 py-3 bg-pink-500 text-white rounded-full text-center"
+              >
+                Sign In
+              </button>
+            </div>
           </div>
         </div>
       )}

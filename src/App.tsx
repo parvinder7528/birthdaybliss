@@ -11,6 +11,7 @@ import Cart from "./components/cart/Cart";
 import Signin from "./components/auth/Signin";
 import Signup from "./components/auth/Signup";
 import Decorations from "./components/decorations/Decorations";
+import DisposalPage from "./components/disposal/Disposal";
 
 const queryClient = new QueryClient();
 
@@ -21,9 +22,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/sign-in" element={<Signin/>}/>
-          <Route path="/sign-up" element={<Signup/>}/>
- <Route path="/decoration" element={<Decorations />} />
+          <Route path="/sign-in" element={<Signin />} />
+          <Route path="/sign-up" element={<Signup />} />
+          <Route path="/decoration" element={<Decorations />} />
+          <Route path="/disposal" element={<DisposalPage />} />
           <Route path="/" element={<Index />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories-view" element={<Categoryview />} />
@@ -34,6 +36,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+
   </QueryClientProvider>
 );
 
