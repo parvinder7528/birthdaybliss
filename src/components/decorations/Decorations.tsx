@@ -37,6 +37,7 @@ import bannerImage from "../../assets/item-banner.jpg";
 import lanternsImage from "../../assets/item-lanterns.jpg";
 import giftwrapImage from "../../assets/item-giftwrap.jpg";
 import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 interface DecorationItem {
   id: number;
@@ -749,13 +750,7 @@ const Decorations = () => {
       </div>
 
       {/* Footer */}
-      <footer className="py-8 bg-card border-t border-border mt-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2024 BirthdayBliss. Making celebrations magical.
-          </p>
-        </div>
-      </footer>
+     <Footer/>
     </div>
   );
 };
